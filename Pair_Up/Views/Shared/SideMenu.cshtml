@@ -1,0 +1,24 @@
+﻿@model IEnumerable< First_Checkpoint.Models.MenuItems>
+
+
+<h2>Menu</h2>
+
+<ul class="list-group">
+    @* @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <li class="list-group-item"><a href="@item.Link" class="btn  btn-default btn-block">@item.LinkName</a></li>
+            }
+
+        }
+
+    *@
+    <li class="list-group-item"><a href="/HomePage/Index" class="btn btn-default btn-block">Home</a></li>
+    <li class="list-group-item"><a href="/Image/ShowImages" class="btn btn-default btn-block">Product Images</a></li>
+    <li class="list-group-item"><a href="#" class="btn btn-default btn-block">Posts</a></li>
+    <li class="list-group-item"><a href="HtmlPage.html" class="btn btn-default btn-block">Chat</a></li>
+    <li class="list-group-item"><a href="#" class="btn btn-default btn-block">Find Location</a></li>
+
+
+</ul>

@@ -1,0 +1,24 @@
+﻿@model First_Checkpoint.Models.File
+@{
+    ViewBag.Title = "UploadImages";
+}
+
+<link href="~/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.9.1.js"></script>
+<script src="~/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
+@using (Html.BeginForm("UploadImages", "Image", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+{
+    <div class="container">
+        <h3>UploadImages</h3>
+        <div class="form-group">
+            <label for="file">Filename:</label>
+            <input type="file" name="file" id="file" />
+
+
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+}

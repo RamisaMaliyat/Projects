@@ -1,0 +1,45 @@
+﻿@model IEnumerable<First_Checkpoint.Models.Admin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminEMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminPhone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminEMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminPhone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdminId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdminId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdminId })
+        </td>
+    </tr>
+}
+
+</table>
