@@ -1,0 +1,70 @@
+*{
+	text-align:center;
+}
+.imagecontainer{
+	margin-left:24px;
+	margin-right:24px;
+	
+}
+.menuconyainer{
+	padding:24px;
+	background:cover;
+}
+
+.item-container{
+	margin-left:30px;
+	margin-right:30px;
+}
+.blog_title{
+	margin-bottom:24px;
+}
+.block_images{
+	margin-top:30px;
+}
+
+.blog_title h4 
+{	
+	 margin-bottom:5px;
+     padding:5px;
+	 color:#5E5F64; 	 
+}
+
+.blog_title p 
+{	
+	 margin-bottom:5px;
+     padding:5px;
+	 color:#5E5F64;	 	 
+}
+.login{
+	
+	padding:60px;
+}
+.text-center{
+	margin-bottom:30px;
+}
+
+.productlogin h3{
+	margin-top:90px;
+}
+
+#end-container p
+{
+	padding-top:70px;
+	color:black;
+    text-align:center;	
+}
+
+.item-header{
+	
+	font-family: 'Kiwi Maru', serif;
+	font-size:40px;
+	margin-bottom:30px;
+	color:#191970;
+}
+.header{
+	font-family: 'Kiwi Maru', serif;
+	font-size:60px;
+	margin-bottom:30px;
+	color:#800000	;
+}
+

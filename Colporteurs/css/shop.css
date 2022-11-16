@@ -1,0 +1,43 @@
+.{
+	font-family: 'Titillium Web', sans-serif;
+}
+
+.product
+{
+	border:1px solid #EEE8AA;
+	margin:-1px 19px 3px -1px;
+	padding:10px;
+	text-align:center;
+}
+table,th,transparent{
+	text-align:center;
+}
+.title2
+{
+	text-align:center;
+	color:#66afe9;
+	
+	padding:2%;
+}
+h2
+{
+	text-align:center;
+	color:#66afe9;
+	
+	padding:2%;
+	
+	
+}
+
+table th{
+	background-color:#efefef;
+}
+.abc
+{
+	margin-bottom:20px;
+}
+.back
+{
+	text-align:left;
+}
+

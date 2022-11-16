@@ -1,0 +1,25 @@
+*
+{
+	text-align:center;
+}
+.section
+{
+	
+  margin-bottom:20px;
+  border:1px solid #696969;
+
+}
+.section p
+{
+	list-style-type:none;
+	text-align:left;
+	padding:20px;
+	margin-left:10px;
+	
+}
+.section img
+{
+	margin-left:10px;
+	margin-bottom:5px;
+	padding:20px;
+}

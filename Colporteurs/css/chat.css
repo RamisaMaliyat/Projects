@@ -1,0 +1,41 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+
+.centeralised{
+	margin:10px auto;
+	width:1000px;
+	text-align:center;
+}
+
+.chathistory{
+	min-height:600px;
+	width:600px;
+	margin:10px auto;
+	padding:10px;
+	background:#FFF0F5;
+	text-align:left;
+	
+	
+}
+
+
+.txtarea{
+	min-height:50px;
+	width:600px;
+	margin:10px auto;
+	padding:10px;
+	
+}
+
+.siglemessage{
+	font-size:12px;
+	padding:5px;
+	border-bottom:1px solid #b3b3b3;
+}
+h2
+{
+	margin-top:30px;
+}
+
