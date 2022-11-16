@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Cottage And Building</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="js/three.js"></script>
+    <script>
+
+
+        const scene = new THREE.Scene();
+        const skytexture = new THREE.TextureLoader().load('./img/s3.jpg');
+        skytexture.wrapS = THREE.ClampToEdgeWrapping;
+        skytexture.wrapT = THREE.ClampToEdgeWrapping;
+        scene.background = skytexture;
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        renderer.setClearColor(0xffffff, 1);
+        renderer.clear();
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+        //new new THREE.PerspectiveCamera(FOV, viewAspectRatio, zNear, zFar)
+        const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.2, 800);
+        camera.position.z = 60;
+		camera.position.y = 15;
+       
+
+        /////////////////////////////////  base  /////////////////////////////////////////////
+
+
+        const geometry1 = new THREE.BoxGeometry(1000, 1000, 1);
+        const texture1 = new THREE.TextureLoader().load('./img/fl.jpg');
+        texture1.wrapS = THREE.RepeatWrapping;
+        texture1.wrapT = THREE.RepeatWrapping;
+        texture1.repeat.set( 10, 10 );
+        const material1 = new THREE.MeshStandardMaterial({
+            map: texture1
+        });
+        
+        const base = new THREE.Mesh(geometry1, material1);
+		base.rotation.x = -0.5* Math.PI;
+        
+        base.receiveShadow = true;
+		scene.add(base);
+		
+		
+		///////////////////////////////// FLOOR /////////////////////////////
+
+
+        
+        const geometry2 = new THREE.PlaneGeometry( 30, 15);
+        const texture2 = new THREE.TextureLoader().load('img/wood.jpg');
+        texture2.wrapS = THREE.RepeatWrapping;
+        texture2.wrapT = THREE.RepeatWrapping;
+        texture2.repeat.set( 2, 2 );
+        const material2 = new THREE.ShaderMaterial({ 
+			vertexShader: vertexShader1(),
+            fragmentShader: fragmentShader2()});
+        const floor = new THREE.Mesh( geometry2, material2 );
+        floor.rotation.x = -0.5 * Math.PI;
+        floor.position.x = 25;
+        floor.position.y = 0.5;
+        floor.position.z = 20;
+        scene.add(floor);
+		
+		
+		
+		/////////////////////////////////// WALL /////////////////////////////////////
+
+
+
+        //////////////////////////////            SIDE  WALL
+
+        var texNO = 0;
+        var index = ['./img/c1.jpg','./img/c2.jpg','./img/c3.jpg'];
+
+        const shape = new THREE.Shape();
+        shape.moveTo(-10, 0);
+        shape.lineTo(10, 0);
+        shape.lineTo(10,14);
+        shape.lineTo(0,20);
+        shape.lineTo(-10,14);
+        shape.lineTo(-10,0);
+        const extrudeGeometry = new THREE.ExtrudeGeometry( shape );
+        const texture3 = new THREE.TextureLoader().load('./img/c2.jpg');
+        texture3.wrapS = THREE.RepeatWrapping;
+        texture3.wrapT = THREE.RepeatWrapping;
+        texture3.repeat.set( 0.1, 0.05 );
+        var material3 = new THREE.MeshStandardMaterial( {map: texture3} );
+
+
+        const sideWall = new THREE.Mesh( extrudeGeometry, material3 ) ;
+        sideWall.rotation.y = -0.5 * Math.PI;
+        sideWall.position.x =15;
+        sideWall.position.z = 5;
+        sideWall.castShadow = true;
+        scene.add(sideWall);
+        
+
+        const sideWall2 = new THREE.Mesh( extrudeGeometry, material3 ) ;
+        sideWall2.rotation.y = -0.5 * Math.PI;
+        sideWall2.position.x = 41;
+        sideWall2.position.z = 5;
+        sideWall2.castShadow = true;
+        scene.add(sideWall2);
+
+
+        //////////////////////////////////////          BACK WALL
+        const shape2 = new THREE.Shape();
+        shape2.moveTo(-12, 0)
+        shape2.lineTo(15, 0)
+        shape2.lineTo(15,14)
+        shape2.lineTo(-12,14);
+        const extrudeGeometry2 = new THREE.ExtrudeGeometry( shape2 );
+        const backWall = new THREE.Mesh( extrudeGeometry2, material3) ;
+        backWall.position.z = -5;
+        backWall.position.x = 25;
+        backWall.castShadow = true;
+        scene.add(backWall);
+
+        
+
+
+
+        ///////////////////////////////////////////           FRONT WALL
+        const shape3 = new THREE.Shape();
+        shape3.moveTo(-13, 0);
+        shape3.lineTo(13, 0);
+        shape3.lineTo(13,14);
+        shape3.lineTo(-13,14);
+        shape3.lineTo(-13,0);
+        const window1 = new THREE.Path();
+        window1.moveTo(1,3)
+        window1.lineTo(5, 8)
+        window1.lineTo(5, 3)
+        window1.lineTo(1, 8);
+        window1.lineTo(1, 3);
+        shape3.holes.push(window1);
+        const door = new THREE.Path();
+        door.moveTo(-3, 0)
+        door.lineTo(-3, 8)
+        door.lineTo(-8, 8)
+        door.lineTo(-8, 0);
+        door.lineTo(-3, 0);
+        shape3.holes.push(door);
+        const extrudeGeometry3 = new THREE.ExtrudeGeometry( shape3 );
+        const frontWall = new THREE.Mesh( extrudeGeometry3, material3 ) ;
+        frontWall.position.z = 13.8;
+        frontWall.position.x = 28;
+        frontWall.castShadow = true;
+        scene.add(frontWall);
+		
+		
+		
+		/////////////////////////////////Glass Window/////////////////////////////////////
+
+        const geometry4 = new THREE.PlaneGeometry(8, 6);
+        const texture4 = new THREE.TextureLoader().load('./img/w6.jpg');
+        const material4 = new THREE.MeshPhongMaterial({
+            map: texture4
+        });
+        
+        const glass = new THREE.Mesh(geometry4, material4);
+		glass.position.z = 15;
+        glass.position.y = 7;
+        glass.position.x = 32;
+		scene.add(glass);
+
+        /////////////////////////////////////////   DOOR WOOD  ///////////////////////
+        const geometry5 = new THREE.PlaneGeometry(5, 12);
+        const texture5 = new THREE.TextureLoader().load('./img/d9.png');
+        texture5.wrapS  = THREE.ClampToEdgeWrapping;
+        texture5.wrapT = THREE.ClampToEdgeWrapping;
+        const material5 = new THREE.MeshPhongMaterial({
+            map: texture5
+        });
+        
+        const doorwood = new THREE.Mesh(geometry5, material5);
+		doorwood.position.z = 15;
+        doorwood.position.y = 2.5;
+        doorwood.position.x = 22.4;
+		scene.add(doorwood);
+
+
+        //////////////////////////////////ROOF////////////////////////////////////
+
+
+        var index2 = ['./img/r1.jpg','./img/r2.jpg','./img/r3.jpg'];
+        const geometry = new THREE.BoxGeometry( 12, 30, 0.5 );
+        const texture6 = new THREE.TextureLoader().load('./img/roof2.jpg');
+        texture6.wrapS = THREE.RepeatWrapping;
+        texture6.wrapT = THREE.RepeatWrapping;
+        texture6.repeat.set( 5, 1);
+        texture6.rotation = Math.PI / 3;
+        const textureMaterial = new THREE.MeshStandardMaterial({ map: texture6});
+
+        const materials = [
+        textureMaterial,
+        textureMaterial,
+        textureMaterial,
+        textureMaterial,
+        textureMaterial,
+        textureMaterial
+                            ];
+        const roof1 = new THREE.Mesh( geometry, materials );
+        scene.add(roof1);
+        roof1.rotation.x = -Math.PI / 3;
+        roof1.rotation.z = -Math.PI / 2;
+        roof1.position.y = 17;
+        roof1.position.x = 27.5;
+        roof1.position.z = 10;
+        roof1.castShadow = true;
+
+
+
+        const roof2 = new THREE.Mesh( geometry, materials );
+        scene.add(roof2);
+        roof2.rotation.x = 7* Math.PI /3;
+        roof2.rotation.z = Math.PI / 2;
+        roof2.position.y = 17;
+        roof2.position.x = 27.5;
+        roof2.position.z = 0;
+        roof2.castShadow = true;
+		
+		
+		
+        //////////////////////////
+        /////////////////////                           BUILDING                  
+        //////////////////////////
+        
+/////////////////    FLOOR Material    ///////
+
+        const geometry7 = new THREE.BoxGeometry( 30, 30, 0.2 );
+        const texture9 = new THREE.TextureLoader().load('./img/glass.jpg');
+        texture9.wrapS = THREE.ClampToEdgeWrapping;
+        texture9.wrapT = THREE.RepeatWrapping;
+        
+        const textureMaterial3 = new THREE.ShaderMaterial({ 
+			vertexShader: vertexShader1(),
+            fragmentShader: fragmentShader3()});
+        const materials3 = [
+        textureMaterial3,
+        textureMaterial3,
+        textureMaterial3,
+        textureMaterial3,
+        new THREE.MeshStandardMaterial({ map: texture9}),
+        textureMaterial3
+                            ];
+
+        ////////////////////////////////////    DOOR MATERIALS   /////////////////////////////////
+
+
+        const geometry9 = new THREE.BoxGeometry( 25, 15, 0.2 );
+        const texture11 = new THREE.TextureLoader().load('./img/d10.jpg');
+        texture11.wrapS = THREE.ClampToEdgeWrapping;
+        texture11.wrapT = THREE.RepeatWrapping;
+        
+        const textureMaterial5 = new THREE.MeshPhongMaterial({ map: texture11});
+        const materials5 = [
+        textureMaterial5,
+        textureMaterial5,
+        textureMaterial5,
+        textureMaterial5,
+        textureMaterial5,
+        textureMaterial5
+                            ];
+
+        
+
+
+
+
+        ///////////////////////////////////////// WINDOW & WALL MATERIALS  ////////////////////////////////
+
+        const geometry6 = new THREE.BoxGeometry( 4.8, 4.8, 0.2);
+        const texture8 = new THREE.TextureLoader().load('./img/w100.jpg');
+        texture8.wrapS = THREE.ClampToEdgeWrapping;
+        texture8.wrapT = THREE.RepeatWrapping;
+
+        const textureMaterial2 = new THREE.MeshPhongMaterial({ map: texture8});
+        const materials2 = [
+        textureMaterial2,
+        textureMaterial2,
+        textureMaterial2,
+        textureMaterial2,
+        textureMaterial2,
+        textureMaterial2
+                            ];
+        
+
+        const shape4 = new THREE.Shape();
+        shape4.moveTo(-15, 0)
+        shape4.lineTo(15, 0)
+        shape4.lineTo(15,15)
+        shape4.lineTo(-15,15);
+
+        const windowno1 = new THREE.Path();
+        windowno1.moveTo(7, 7)
+        windowno1.lineTo(12, 7)
+        windowno1.lineTo(12, 12)
+        windowno1.lineTo(7, 12);
+        windowno1.lineTo(7, 7);
+        shape4.holes.push(windowno1);
+
+        const windowno2 = new THREE.Path();
+        windowno2.moveTo(-7, 7)
+        windowno2.lineTo(-12, 7)
+        windowno2.lineTo(-12, 12)
+        windowno2.lineTo(-7, 12);
+        windowno2.lineTo(-7, 7);
+        shape4.holes.push(windowno2);
+
+
+        const extrudeGeometry4 = new THREE.ExtrudeGeometry( shape4 );
+        const texture7 = new THREE.TextureLoader().load('./img/b99.jpg');
+        texture7.wrapS = THREE.RepeatWrapping;
+        texture7.wrapT = THREE.RepeatWrapping;
+        texture7.repeat.set( 0.2, 0.06 );
+        var material6 = new THREE.MeshStandardMaterial( {map: texture7} );
+
+
+
+        //////////////////////////////////  1st Floor  //////////////////////////////
+        
+        //////////////////////////// FLOOR //////////////////
+        const buildingFloor1 = new THREE.Mesh( geometry7, materials3 );
+        scene.add(buildingFloor1);
+        buildingFloor1.rotation.x = -Math.PI/2;
+        buildingFloor1.position.y = 0.5;
+        buildingFloor1.position.x = -20;
+        buildingFloor1.position.z = 0;
+		
+		
+		
+		////////////////////////////BackWall////////////////////////////
+        const buildingWall1 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall1.position.z = -15;
+        buildingWall1.position.x = -20;
+        scene.add(buildingWall1);
+        buildingWall1.castShadow = true;
+		
+        const windowpanel = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpanel);
+        windowpanel.position.y = 9.5;
+        windowpanel.position.x = 9.5 - 20;
+        windowpanel.position.z = -14.5;
+        windowpanel.castShadow = true;
+
+        const windowpane2 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2);
+        windowpane2.position.y = 9.5;
+        windowpane2.position.x = -9.5 - 20;
+        windowpane2.position.z =  -14.5;
+        windowpane2.castShadow = true;
+		
+        ////////////////////////////////////LEFT WALL /////////////
+        const buildingWall2 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall2.position.z = 0;
+        buildingWall2.position.x = -15 -20;
+        buildingWall2.rotation.y = -Math.PI/2;
+        buildingWall2.castShadow = true;
+        scene.add(buildingWall2);
+
+        const windowpane3 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3);
+        windowpane3.rotation.y = -Math.PI/2;
+        windowpane3.position.y = 9.5;
+        windowpane3.position.x = -15.5 - 20;
+        windowpane3.position.z = -9.5;
+        windowpane3.castShadow = true;
+
+        const windowpane4 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane4);
+        windowpane4.rotation.y = -Math.PI/2;
+        windowpane4.position.y = 9.5;
+        windowpane4.position.x = -15.5 - 20;
+        windowpane4.position.z = 9.5;
+        windowpane4.castShadow = true;
+
+
+        ////////////////////////////////////RIGHT WALL /////////////////////
+        const buildingWall3 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall3.position.z = 0;
+        buildingWall3.position.x =  15 - 20;
+        buildingWall3.rotation.y = -Math.PI/2;
+        scene.add(buildingWall3);
+        buildingWall3.castShadow = true;
+
+
+        const windowpane5 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane5);
+        windowpane5.rotation.y = -Math.PI/2;
+        windowpane5.position.y = 9.5;
+        windowpane5.position.x = 14.5 -20;
+        windowpane5.position.z = -9.5;
+        windowpane5.castShadow = true;
+
+        const windowpane6 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane6);
+        windowpane6.rotation.y = -Math.PI/2;
+        windowpane6.position.y = 9.5;
+        windowpane6.position.x = 14.5 -20;
+        windowpane6.position.z = 9.5;
+        windowpane6.castShadow = true;
+
+
+
+
+
+        ///////////////////////////////// FRONT WALL ///////////////////////////
+        const buildingWall4 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall4.position.z = 13.9;
+        buildingWall4.position.x = -20;
+        scene.add(buildingWall4);
+        buildingWall4.castShadow = true;
+
+
+		////        Door
+
+        const buildingdoor = new THREE.Mesh( geometry9, materials5 );
+        scene.add(buildingdoor);
+        buildingdoor.position.y = 5.5;
+        buildingdoor.position.x = 0 -20;
+        buildingdoor.position.z = 15.05;
+        buildingdoor.castShadow = true;
+
+		
+		
+		//////////////////////////////////  2nd Floor  //////////////////////////////
+        
+        //////////////////////////// FLOOR //////////////////
+        const geometry10 = new THREE.BoxGeometry( 31.5, 31, 0.6 );
+
+        const buildingFloor2_1 = new THREE.Mesh( geometry10, materials3 );
+        scene.add(buildingFloor2_1);
+        buildingFloor2_1.rotation.x = -Math.PI/2;
+        buildingFloor2_1.position.y = 0.5 + 15;
+        buildingFloor2_1.position.x = -20.5;
+        buildingFloor2_1.position.z = 0;
+
+
+        ////////////////////////////BackWall////////////////////////////
+        const buildingWall2_1 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall2_1.position.z = -15;
+        buildingWall2_1.position.y = 15;
+        buildingWall2_1.position.x = -20;
+        scene.add(buildingWall2_1);
+        buildingWall2_1.castShadow = true;
+        
+
+        const windowpane2_l = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_l);
+        windowpane2_l.position.y = 9.5 + 15;
+        windowpane2_l.position.x = 9.5 - 20;
+        windowpane2_l.position.z = -14.5;
+        windowpane2_l.castShadow = true;
+
+        const windowpane2_2 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_2);
+        windowpane2_2.position.y = 9.5 + 15;
+        windowpane2_2.position.x = -9.5 - 20;
+        windowpane2_2.position.z = -14.5;
+        windowpane2_2.castShadow = true;
+
+        ////////////////////////////////////LEFT WALL /////////////
+        const buildingWall2_2 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall2_2.position.y =  15;
+        buildingWall2_2.position.z = 0;
+        buildingWall2_2.position.x = -15 - 20;
+        buildingWall2_2.rotation.y = -Math.PI/2;
+        scene.add(buildingWall2_2);
+        buildingWall2_2.castShadow = true;
+
+        const windowpane2_3 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_3);
+        windowpane2_3.rotation.y = -Math.PI/2;
+        windowpane2_3.position.y = 9.5 + 15;
+        windowpane2_3.position.x = -15.5 - 20;
+        windowpane2_3.position.z = -9.5;
+        windowpane2_3.castShadow = true;
+
+        const windowpane2_4 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_4);
+        windowpane2_4.rotation.y = -Math.PI/2;
+        windowpane2_4.position.y = 9.5 + 15;
+        windowpane2_4.position.x = -15.5 - 20;
+        windowpane2_4.position.z = 9.5;
+        windowpane2_4.castShadow = true;
+
+
+        ////////////////////////////////////RIGHT WALL /////////////////////
+        const buildingWall2_3 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall2_3.position.y =  15;
+        buildingWall2_3.position.z = 0;
+        buildingWall2_3.position.x =  15 - 20;
+        buildingWall2_3.rotation.y = -Math.PI/2;
+        scene.add(buildingWall2_3);
+        buildingWall2_3.castShadow = true;
+
+
+        const windowpane2_5 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_5);
+        windowpane2_5.rotation.y = -Math.PI/2;
+        windowpane2_5.position.y = 9.5 + 15;
+        windowpane2_5.position.x = 14.5 - 20;
+        windowpane2_5.position.z = -9.5;
+        windowpane2_5.castShadow = true;
+
+        const windowpane2_6 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_6);
+        windowpane2_6.rotation.y = -Math.PI/2;
+        windowpane2_6.position.y = 9.5 + 15;
+        windowpane2_6.position.x = 14.5 - 20;
+        windowpane2_6.position.z = 9.5;
+        windowpane2_5.castShadow = true;
+
+
+
+
+
+        /////////////////////////////////FRONT WALL ///////////////////////////
+        const buildingWall2_4 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall2_4.position.y =  15;
+        buildingWall2_4.position.z = 13.9;
+        buildingWall2_4.position.x = -20;
+        scene.add(buildingWall2_4);
+        buildingWall2_4.castShadow = true;
+
+
+        const windowpane2_7 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_7);
+        windowpane2_7.position.y = 9.5 + 15;
+        windowpane2_7.position.x = 9.5 - 20;
+        windowpane2_7.position.z = 14.5;
+        windowpane2_7.castShadow = true;
+
+        const windowpane2_8 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane2_8);
+        windowpane2_8.position.y = 9.5 + 15;
+        windowpane2_8.position.x = -9.5 - 20;
+        windowpane2_8.position.z = 14.5;
+        windowpane2_8.castShadow = true;
+
+			
+
+		//////////////////////////////////  3rd Floor  //////////////////////////////
+        
+        //////////////////////////// FLOOR //////////////////
+        const geometry101 = new THREE.BoxGeometry( 33.0, 32, 1.0 );
+
+        const buildingFloor3_1 = new THREE.Mesh( geometry101, materials3 );
+        scene.add(buildingFloor3_1);
+        buildingFloor3_1.rotation.x = -Math.PI/2;
+        buildingFloor3_1.position.y = 0.5 + 15+15;
+        buildingFloor3_1.position.x = -20.5;
+        buildingFloor3_1.position.z = 0;
+
+
+            ////////////////////////////BackWall////////////////////////////
+        const buildingWall3_1 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall3_1.position.z = -15;
+        buildingWall3_1.position.y = 15+15;
+        buildingWall3_1.position.x = -20;
+        scene.add(buildingWall3_1);
+        buildingWall3_1.castShadow = true;
+        
+
+        const windowpane3_l = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_l);
+        windowpane3_l.position.y = 9.5 + 15+15;
+        windowpane3_l.position.x = 9.5 - 20;
+        windowpane3_l.position.z = -14.5;
+        windowpane3_l.castShadow = true;
+
+        const windowpane3_2 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_2);
+        windowpane3_2.position.y = 9.5 + 15+15;
+        windowpane3_2.position.x = -9.5 - 20;
+        windowpane3_2.position.z = -14.5;
+        windowpane3_2.castShadow = true;
+
+        ////////////////////////////////////LEFT WALL /////////////
+        const buildingWall3_2 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall3_2.position.y =  15+15;
+        buildingWall3_2.position.z = 0;
+        buildingWall3_2.position.x = -15 - 20;
+        buildingWall3_2.rotation.y = -Math.PI/2;
+        scene.add(buildingWall3_2);
+        buildingWall3_2.castShadow = true;
+
+        const windowpane3_3 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_3);
+        windowpane3_3.rotation.y = -Math.PI/2;
+        windowpane3_3.position.y = 9.5 + 15+15;
+        windowpane3_3.position.x = -15.5 - 20;
+        windowpane3_3.position.z = -9.5;
+        windowpane3_3.castShadow = true;
+
+        const windowpane3_4 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_4);
+        windowpane3_4.rotation.y = -Math.PI/2;
+        windowpane3_4.position.y = 9.5 + 15+15;
+        windowpane3_4.position.x = -15.5 - 20;
+        windowpane3_4.position.z = 9.5;
+        windowpane3_4.castShadow = true;
+
+
+        ////////////////////////////////////RIGHT WALL /////////////////////
+        const buildingWall3_3 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall3_3.position.y =  15+15;
+        buildingWall3_3.position.z = 0;
+        buildingWall3_3.position.x =  15 - 20;
+        buildingWall3_3.rotation.y = -Math.PI/2;
+        scene.add(buildingWall3_3);
+        buildingWall3_3.castShadow = true;
+
+
+        const windowpane3_5 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_5);
+        windowpane3_5.rotation.y = -Math.PI/2;
+        windowpane3_5.position.y = 9.5 + 15+15;
+        windowpane3_5.position.x = 14.5 - 20;
+        windowpane3_5.position.z = -9.5;
+        windowpane3_5.castShadow = true;
+
+        const windowpane3_6 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_6);
+        windowpane3_6.rotation.y = -Math.PI/2;
+        windowpane3_6.position.y = 9.5 + 15+15;
+        windowpane3_6.position.x = 14.5 - 20;
+        windowpane3_6.position.z = 9.5;
+        windowpane3_5.castShadow = true;
+
+
+
+
+
+        /////////////////////////////////FRONT WALL ///////////////////////////
+        const buildingWall3_4 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall3_4.position.y =  15+15;
+        buildingWall3_4.position.z = 13.9;
+        buildingWall3_4.position.x = -20;
+        scene.add(buildingWall3_4);
+        buildingWall3_4.castShadow = true;
+
+
+        const windowpane3_7 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_7);
+        windowpane3_7.position.y = 9.5 + 15+15;
+        windowpane3_7.position.x = 9.5 - 20;
+        windowpane3_7.position.z = 14.5;
+        windowpane3_7.castShadow = true;
+
+        const windowpane3_8 = new THREE.Mesh( geometry6, materials2 );
+        scene.add(windowpane3_8);
+        windowpane3_8.position.y = 9.5 + 15+15;
+        windowpane3_8.position.x = -9.5 - 20;
+        windowpane3_8.position.z = 14.5;
+        windowpane3_8.castShadow = true;
+
+//////////////////////*******************
+//////////////////////////////////  4th Floor  //////////////////////////////
+        
+        //////////////////////////// FLOOR //////////////////
+        const geometry102 = new THREE.BoxGeometry( 34.5, 32, 1.0 );
+
+        const buildingFloor4_1 = new THREE.Mesh( geometry102, materials3 );
+        scene.add(buildingFloor4_1);
+        buildingFloor4_1.rotation.x = -Math.PI/2;
+        buildingFloor4_1.position.y = 0.5 + 15+30;
+        buildingFloor4_1.position.x = -20.5;
+        buildingFloor4_1.position.z = 0;
+
+
+            ////////////////////////////BackWall////////////////////////////
+        const buildingWall4_1 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall4_1.position.z = -15;
+        buildingWall4_1.position.y = 15+30;
+        buildingWall4_1.position.x = -20;
+        scene.add(buildingWall4_1);
+        buildingWall4_1.castShadow = true;
+        
+
+       
+
+        
+
+        ////////////////////////////////////LEFT WALL /////////////
+        const buildingWall4_2 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall4_2.position.y =  15+30;
+        buildingWall4_2.position.z = 0;
+        buildingWall4_2.position.x = -15 - 20;
+        buildingWall4_2.rotation.y = -Math.PI/2;
+        scene.add(buildingWall4_2);
+        buildingWall4_2.castShadow = true;
+
+        
+
+
+        ////////////////////////////////////RIGHT WALL /////////////////////
+        const buildingWall4_3 = new THREE.Mesh( extrudeGeometry4, material6) ;
+        buildingWall4_3.position.y =  15+30;
+        buildingWall4_3.position.z = 0;
+        buildingWall4_3.position.x =  15 - 20;
+        buildingWall4_3.rotation.y = -Math.PI/2;
+        scene.add(buildingWall4_3);
+        buildingWall4_3.castShadow = true;
+
+
+        ///////////////////////////////////  BUILDING ROOF  ///////////////////////////////
+
+
+        const geometry8 = new THREE.BoxGeometry( 40, 30, 1.0 );
+        
+        const textureMaterial4 = new THREE.ShaderMaterial({ 
+			vertexShader: vertexShader1(),
+            fragmentShader: fragmentShader1()});
+        const materials4 = [
+        textureMaterial4,
+        textureMaterial4,
+        textureMaterial4,
+        textureMaterial4,
+        textureMaterial4,
+        textureMaterial4
+                            ];
+
+        const buildingRoof = new THREE.Mesh( geometry8, materials4 );
+        scene.add(buildingRoof);
+        buildingRoof.rotation.x = -Math.PI/2;
+        buildingRoof.position.y =  30;
+        buildingRoof.position.x = -0.5 - 20;
+        buildingRoof.position.z = 0;
+
+
+		
+
+		///////////////////////////////////  BUILDING ROOF2  ///////////////////////////////
+
+
+        ///////////////////////////////////  BUILDING ROOF  ///////////////////////////////
+
+
+        const geometry80 = new THREE.BoxGeometry( 40, 30, 0.6 );
+        
+        const textureMaterial40 = new THREE.ShaderMaterial({ 
+			vertexShader: vertexShader1(),
+            fragmentShader: fragmentShader1()});
+        const materials40 = [
+        textureMaterial40,
+        textureMaterial40,
+        textureMaterial40,
+        textureMaterial40,
+        textureMaterial40,
+        textureMaterial40
+                            ];
+
+        const buildingRoof0 = new THREE.Mesh( geometry80, materials40 );
+        scene.add(buildingRoof0);
+        buildingRoof0.rotation.x = -Math.PI/2;
+        buildingRoof0.position.y =  45;
+        buildingRoof0.position.x = -0.5 - 20;
+        buildingRoof0.position.z = 0;
+
+
+
+
+        ////////////////////////////////////////////////////////////////////////
+
+    
+
+        ////////////////////////////////////////////////////////////////////////
+/******
+
+***/
+
+        const color = 0xFFFFFF;
+        const intensity = 3;
+        const distance = 100;
+
+        const light = new THREE.PointLight(color, intensity, distance);
+        light.position.set(150, 40, 0);
+        light.castShadow =true;
+
+        light.shadow.mapSize.width = 300; 
+        light.shadow.mapSize.height = 300; 
+        light.shadow.camera.near = 0.5; 
+        light.shadow.camera.far = 25; 
+        
+
+
+        scene.add(light);
+
+        renderer.render(scene, camera);
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            var time = Date.now()*.005;
+            light.position.x = Math.sin(time*0.07)*50;
+            light.position.z = Math.cos(time*0.07)*50;
+            renderer.render(scene, camera);
+        };
+
+        animate();
+		
+		
+		var k = 100;
+        document.onkeydown = function (c) {
+           c = c || window.event
+				if (c.keyCode == '38') {
+					// up 
+					scene.rotation.x += 0.25
+					camera.position.z -=.5;
+				}
+				else if (c.keyCode == '40') {
+					// down 
+					scene.rotation.x -= 0.25
+				}
+				else if (c.keyCode == '37') {
+					// left
+					scene.rotation.y += 0.25
+					
+				}
+				else if (c.keyCode == '39') {
+					// right
+					scene.rotation.y -= 0.25
+				}
+				else if (c.keyCode == '87'){
+				// zoom out key (w)
+					camera.position.x -= Math.sin(camera.rotation.y) * socket.speed;
+					camera.position.z -= -Math.cos(camera.rotation.y) * socket.speed;
+				}
+				else if (c.keyCode == '83'){
+				// zoom in key (s)
+					camera.position.x += Math.sin(camera.rotation.y) * socket.speed;
+					camera.position.z += -Math.cos(camera.rotation.y) * socket.speed;
+				}
+				
+        };
+
+        
+        document.onmousedown = function ()
+        {  
+            texNO += 1 ;
+            var textureChange1 = new THREE.TextureLoader().load( index[texNO%3] );
+            textureChange1.wrapS = THREE.RepeatWrapping;
+            textureChange1.wrapT = THREE.RepeatWrapping;
+            textureChange1.repeat.set( 0.1, 0.05 );
+            material3.map = textureChange1;
+
+
+
+            var textureChange2 = new THREE.TextureLoader().load( index2[texNO%3] );
+            textureChange2.wrapS = THREE.RepeatWrapping;
+            textureChange2.wrapT = THREE.RepeatWrapping;
+            textureChange2.repeat.set( 5, 1);
+            textureChange2.rotation = Math.PI / 2;
+            textureMaterial.map = textureChange2;
+            
+        };
+		
+		
+		function vertexShader1() {
+		return `
+
+			void main() {
+
+			vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+			gl_Position = projectionMatrix * modelViewPosition; 
+
+			}
+		`
+		}
+
+		function fragmentShader1() {
+		return `
+			void main() {
+
+				gl_FragColor = vec4( 0.5, 0.5,0.5, 1.0);
+
+			}
+		`
+		}
+		function fragmentShader2() {
+		return `
+			void main() {
+
+				gl_FragColor = vec4( 0.5, 0.5,0.5, 1.0);
+				
+			}
+		`
+		}
+        function fragmentShader3() {
+		return `
+			void main() {
+
+				gl_FragColor = vec4( 0.5, 0.5,0.5, 1.0);
+
+			}
+		`
+		}
+
+		
+    </script>
+</body>
+
+</html>
