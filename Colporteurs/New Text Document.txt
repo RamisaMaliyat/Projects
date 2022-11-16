@@ -1,0 +1,67 @@
+  <!--modal-->
+           <div class="modal" id="signUpModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title">account created successfully</h2>
+                </div>
+                <div class="modal-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end--->
+
+------------------------------
+USERDETAILS
+---------------------------------
+
+<div>
+  <?php include 'header.php' ?></div>
+
+
+ <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <form action="" method="post" enctype="multipart/form-data">
+
+       <div class="form-group mb-5 mt-5"><label>Username</label> <input type="text" name="name" value="" placeholder="Username" class="form-control" required /> </div>
+       <div class="form-group mb-5 mt-5"> <label>Email</label><input type="email" name="email" value="" placeholder="email address" class="form-control" required /> </div>
+       <div class="form-group mb-5 mt-5"><label>Phone Number</label><input type="text" name="phone" value="" placeholder="phone number" class="form-control" /></div>
+       <div class="form-group mb-5 mt-5"><label>Password</label><input type="text" name="password" value="" placeholder="enter password" class="form-control" /></div>
+       <div class="form-group mb-5 mt-5">
+        <input type="submit"  value="Edit"  class="btn btn-success" />
+       
+       
+        $sqlCheck="select user_name,user_email,user_phone,user_password from user where user_email='".$email."'";
+        $resultCheck=mysqli_query($link,$sqlCheck);
+       
+        <table class="table table-bordered" border="5 mt-5">
+        foreach ($sqlCheck  as $row) {
+      
+      <tr>
+        <td><?php echo $row[0]?></td>
+        <td><?php echo $row[1]?></td>
+
+        <td><?php echo $row[2]?></td>
+
+        <td><?php echo $row[3]?></td>
+      </tr>
+    }
+      
+    
+  </table>
+
+        $insertId=mysqli_insert_id($link); 
+      </div>
+    </form>
+
+  </div>
+----------------------------------
+-----------------------------------
