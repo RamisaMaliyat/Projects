@@ -1,0 +1,301 @@
+PlaceName,IsTouristSpot,Distance from Airport/touristSpot(km),StarRating,HasSwimmingPool,RoomType,RoomView,HasRefrigerator,HasBalcony,GymFacilities,Rent(Per Day)
+Bandarban,Yes,0.45,3,No,Double,Hill View,No,Yes,No,3439
+Bandarban,Yes,0.45,3,No,Triple,Hill View,No,Yes,No,4299
+Bandarban,Yes,16.8,3,No,Twin,Hill View,No,Yes,No,5675
+Bandarban,Yes,16.8,3,No,Triple,Hill View,No,Yes,No,7910
+Bandarban,No,3,3,No,Single,City View,Yes,Yes,Yes,3520
+Bandarban,No,3,3,No,Suite,City View,Yes,Yes,Yes,4035
+Bandarban,No,3,3,No,Suite,City View,Yes,Yes,Yes,5322
+Bandarban,Yes,2.2,4,No,Single,None,No,Yes,No,2489
+Bandarban,Yes,2.2,4,No,Double,None,No,Yes,No,2575
+Chittagong,No,19.99,4,No,Twin,None,No,Yes,No,5350
+Chittagong,No,19.99,4,No,Suite,None,Yes,Yes,No,8735
+Chittagong,No,16.1,4,Yes,Single,None,No,No,Yes,15350
+Chittagong,No,16.1,4,Yes,Suite,None,No,No,Yes,45942
+Chittagong,No,15.7,3,No,Single,None,Yes,No,No,3675
+Chittagong,No,15.7,3,No,Double,None,Yes,No,No,4730
+Chittagong,No,15.7,3,No,Twin,None,No,No,No,5080
+Chittagong,No,16.1,4,Yes,Double,None,No,Yes,Yes,30000
+Chittagong,No,18,2,No,Single,None,No,No,No,1034
+Chittagong,No,18,2,No,Double,None,No,No,No,2065
+Chittagong,No,17,3,No,Single,City View,No,No,No,2017
+Chittagong,No,17,3,No,Double,City View,No,Yes,No,3900
+Chittagong,No,19.99,4,No,Double,None,Yes,Yes,No,6250
+Chittagong,No,19.99,4,No,Single,None,No,No,No,3675
+Chittagong,Yes,16.5,5,Yes,Triple,Hill View,No,No,Yes,16008
+Chittagong,Yes,16.5,5,Yes,Triple,None,No,No,Yes,12500
+Chittagong,Yes,16.5,5,Yes,Double,Hill View,No,No,Yes,9700
+Chittagong,Yes,16.5,5,Yes,Double,None,No,No,Yes,7650
+Chittagong,Yes,16.5,5,Yes,Triple,Sea View,No,No,Yes,17000
+Chittagong,No,15.7,3,No,Triple,None,Yes,No,No,6500
+Chittagong,No,23.75,3,No,Double,None,Yes,Yes,No,5250
+Chittagong,No,23.75,3,No,Single,None,No,Yes,No,3200
+Chittagong,No,23.75,3,No,Twin,None,No,Yes,No,3900
+Bandarban,Yes,0.482,3.5,No,Suite,None,Yes,No,No,7371
+Bandarban,Yes,0.482,3.5,No,Double,None,Yes,No,No,4244
+Bandarban,Yes,12.87,4.5,No,Double,Lake View,No,Yes,No,3793
+Bandarban,Yes,12.87,4.5,No,Single,Lake View,No,Yes,No,3234
+Bandarban,Yes,3.9,5,Yes,Triple,None,Yes,Yes,Yes,7652
+Bandarban,Yes,4.02,4.5,Yes,Single,None,Yes,Yes,Yes,4322
+Bandarban,Yes,4.02,4.5,Yes,Double,None,Yes,Yes,Yes,5582
+Bandarban,Yes,46.67,4.5,Yes,Triple,Lake View,Yes,No,No,4471
+Cox's Bazar,Yes,0.66,5,Yes,Double,None,Yes,No,Yes,4269
+Cox's Bazar,Yes,0.66,5,Yes,Double,None,Yes,Yes,Yes,4744
+Cox's Bazar,Yes,0.66,5,Yes,Double,Hill View,Yes,No,Yes,4744
+Cox's Bazar,Yes,0.66,5,Yes,Double,Sea View,Yes,Yes,Yes,6641
+Cox's Bazar,Yes,0.075,5,Yes,Suite,None,No,No,Yes,37945
+Cox's Bazar,Yes,0.075,5,Yes,Double,None,No,No,Yes,15973
+Cox's Bazar,Yes,0.075,5,Yes,Double,City View,Yes,Yes,Yes,12500
+Cox's Bazar,Yes,0.075,5,Yes,Double,Sea View,No,Yes,Yes,20000
+Cox's Bazar,Yes,0.02,3,No,Triple,None,No,No,No,3139
+Cox's Bazar,Yes,0.02,3,No,Double,Sea View,No,Yes,No,3611
+Cox's Bazar,Yes,1.21,4,Yes,Double,None,No,No,Yes,5475
+Cox's Bazar,Yes,0.14,4,Yes,Double,None,Yes,No,Yes,6500
+Cox's Bazar,Yes,0.14,4,Yes,Double,Sea View,No,Yes,Yes,11500
+Cox's Bazar,Yes,0.91,3,Yes,Twin,Sea View,No,No,No,5530
+Cox's Bazar,Yes,0.91,3,Yes,Double,None,No,No,No,5400
+Cox's Bazar,Yes,0.91,3,Yes,Suite,Sea View,Yes,No,No,12650
+Cox's Bazar,Yes,0.91,3,Yes,Quadruple,None,Yes,No,No,9535
+Cox's Bazar,Yes,0.02,3,No,Single,None,No,No,No,1753
+Cox's Bazar,Yes,0.14,4,Yes,Double,None,No,No,Yes,6735
+Cox's Bazar,Yes,0.02,3,No,Double,None,Yes,No,No,3300
+Cox's Bazar,Yes,0.02,3,No,Twin,None,Yes,Yes,No,3950
+Cox's Bazar,Yes,0.66,5,Yes,Triple,Sea View,Yes,Yes,Yes,7900
+Cox's Bazar,Yes,0.66,5,Yes,Triple,Hill View,Yes,No,Yes,6700
+Cox's Bazar,Yes,0.44,3,No,Twin,None,Yes,Yes,Yes,6601
+Cox's Bazar,Yes,0.44,3,No,Double,None,Yes,No,Yes,5050
+Cox's Bazar,Yes,0.44,3,No,Suite,Hill View,Yes,Yes,Yes,9500
+Cox's Bazar,Yes,0.44,3,No,Suite,Sea View,Yes,Yes,Yes,11000
+Cox's Bazar,Yes,0.075,5,Yes,Twin,Sea View,No,Yes,Yes,22000
+Cox's Bazar,Yes,0.075,5,Yes,Twin,None,No,Yes,Yes,18500
+Cox's Bazar,Yes,0.075,5,Yes,Triple,Sea View,No,Yes,Yes,25400
+Cox's Bazar,Yes,1.21,4,Yes,Triple,None,No,No,Yes,6675
+Cox's Bazar,Yes,1.21,4,Yes,Twin,None,No,Yes,Yes,5890
+Cox's Bazar,No,29,3,No,Twin,City View,Yes,No,No,3320
+Cox's Bazar,No,29,3,No,Double,None,Yes,No,No,3020
+Cox's Bazar,No,29,3,No,Suite,City View,Yes,No,No,4930
+Cox's Bazar,Yes,0.02,3,No,Triple,None,No,No,No,3100
+Cox's Bazar,Yes,0.02,3,No,Double,None,Yes,No,No,2200
+Cox's Bazar,Yes,2.5,5,Yes,Double,None,No,Yes,Yes,15500
+Cox's Bazar,Yes,2.5,5,Yes,Single,None,No,No,Yes,8900
+Dhaka,No,2.2,4,No,Double,None,Yes,No,Yes,7911
+Dhaka,No,2.2,4,No,Twin,None,Yes,No,Yes,9450
+Dhaka,No,1.3,4,No,Double,None,Yes,Yes,Yes,19599
+Dhaka,No,1.3,4,No,Twin,None,Yes,No,Yes,20000
+Dhaka,No,1.3,4,No,Twin,None,Yes,No,Yes,22000
+Dhaka,No,4.8,4,No,Double,None,Yes,Yes,Yes,11900
+Dhaka,No,4.8,4,No,Twin,None,Yes,No,Yes,12200
+Dhaka,No,8.3,4,No,Double,None,Yes,No,No,4291
+Dhaka,No,8.3,4,No,Triple,None,Yes,Yes,No,5980
+Dhaka,No,8.3,4,No,Twin,None,Yes,No,No,5200
+Dhaka,No,17.2,3,No,Double,City View,No,No,No,4000
+Dhaka,No,17.2,3,No,Double,None,No,No,No,3500
+Dhaka,No,17.2,3,No,Triple,City View,No,No,No,5500
+Dhaka,No,17.2,3,No,Twin,City View,No,No,No,4500
+Dhaka,No,8.4,4,Yes,Double,City View,Yes,Yes,Yes,6900
+Dhaka,No,8.4,4,Yes,Double,None,Yes,No,Yes,5900
+Dhaka,No,8.4,4,Yes,Twin,City View,Yes,Yes,Yes,7350
+Dhaka,No,8.4,4,Yes,Triple,City View,Yes,Yes,Yes,7860
+Dhaka,No,14.6,4,Yes,Double,None,Yes,No,Yes,9790
+Dhaka,No,14.6,4,Yes,Twin,None,Yes,Yes,Yes,11200
+Dhaka,No,14.6,4,Yes,Double,None,Yes,No,Yes,10790
+Dhaka,No,14.6,4,Yes,Twin,None,Yes,Yes,Yes,12200
+Dhaka,No,29,4,No,Double,None,Yes,No,No,7325
+Dhaka,No,19,4,No,Twin,None,Yes,No,No,7725
+Dhaka,No,19,4,No,Double,None,Yes,Yes,No,7925
+Dhaka,No,7,4,Yes,Double,City View,Yes,Yes,Yes,7900
+Dhaka,No,7,4,Yes,Twin,None,No,Yes,Yes,8500
+Dhaka,No,7,4,Yes,Triple,None,No,No,Yes,7550
+Dhaka,No,1.3,3,No,Double,None,No,Yes,Yes,2146
+Dhaka,No,1.3,3,No,Twin,None,No,No,Yes,2146
+Dhaka,No,1.3,3,No,Suite,None,No,Yes,Yes,2576
+Dhaka,No,1.3,3,No,Single,None,No,No,Yes,1888
+Dhaka,No,12.4,3,No,Double,None,Yes,No,Yes,2833
+Dhaka,No,12.4,3,No,Twin,None,Yes,No,Yes,2833
+Dhaka,No,12.4,3,No,Triple,Lake View,Yes,No,Yes,4120
+Dhaka,No,12.4,3,No,Single,Lake View,Yes,No,Yes,2318
+Dhaka,No,12.4,3,No,Suite,Lake View,Yes,No,Yes,3777
+Dhaka,No,12.4,3,No,Twin,Lake View,Yes,No,Yes,3262
+Dhaka,No,16.7,2,No,Double,City View,No,No,No,2575
+Dhaka,No,16.7,2,No,Twin,City View,No,No,No,3005
+Dhaka,No,16.7,2,No,Triple,City View,No,No,No,3520
+Dhaka,No,16.7,2,No,Single,City View,No,No,No,1803
+Dhaka,No,16.7,2,No,Single,City View,No,No,No,2232
+Dhaka,No,18.3,3,No,Double,City View,No,Yes,Yes,3520
+Dhaka,No,18.3,3,No,Twin,City View,No,Yes,Yes,3520
+Dhaka,No,18.3,3,No,Single,City View,No,Yes,Yes,3262
+Dhaka,No,19.2,3,No,Twin,City View,Yes,No,Yes,3348
+Dhaka,No,19.2,3,No,Double,City View,Yes,No,Yes,3777
+Dhaka,No,19.2,3,No,Twin,None,Yes,No,Yes,3606
+Dhaka,No,19.2,3,No,Suite,None,Yes,No,Yes,4292
+Dhaka,No,19.2,3,No,Triple,None,Yes,No,Yes,5237
+Dhaka,No,19.2,3,No,Quadruple,None,Yes,No,Yes,9100
+Dhaka,No,19.2,3,No,Single,City View,Yes,No,Yes,2232
+Dhaka,No,19.2,3,No,Single,None,Yes,No,Yes,2662
+Dhaka,No,18.6,3,No,Double,City View,Yes,No,No,3091
+Dhaka,No,18.6,3,No,Double,City View,Yes,No,No,3692
+Dhaka,No,18.6,3,No,Suite,City View,Yes,No,No,3777
+Dhaka,No,6.6,3,No,Double,City View,No,No,Yes,4970
+Dhaka,No,6.6,3,No,Suite,City View,No,Yes,Yes,5262
+Dhaka,No,8.2,4,Yes,Single,City View,No,No,Yes,5094
+Dhaka,No,8.2,4,Yes,Double,Lake View,No,No,Yes,5481
+Cox's Bazar,No,4.2,4,Yes,Single,Lake View,No,No,Yes,5610
+Cox's Bazar,No,4.2,4,Yes,Twin,City View,No,No,Yes,5804
+Cox's Bazar,No,4.2,4,Yes,Suite,City View,No,No,Yes,9673
+Cox's Bazar,No,2.3,2,Yes,Double,None,No,Yes,No,11177
+Cox's Bazar,No,2.3,2,Yes,Double,Lake View,No,Yes,No,12467
+Cox's Bazar,No,2.3,2,Yes,Suite,Lake View,No,Yes,No,14760
+Dhaka,No,16.3,2,Yes,Twin,None,No,Yes,No,13047
+Dhaka,No,18.1,3,Yes,Double,None,No,No,No,5187
+Dhaka,No,18.1,3,Yes,Twin,Lake View,No,Yes,No,5187
+Dhaka,No,18.1,3,Yes,Double,Lake View,No,Yes,No,6363
+Dhaka,No,18.1,3,Yes,Suite,None,No,Yes,No,6755
+Dhaka,No,18.1,3,Yes,Suite,Lake View,Yes,Yes,No,7461
+Dhaka,No,18.1,3,Yes,Quadruple,Lake View,No,Yes,No,8716
+Dhaka,No,22.6,3,No,Suite,City View,No,Yes,No,1797
+Dhaka,No,22.6,3,No,Quadruple,City View,Yes,Yes,No,2961
+Dhaka,No,22.4,3,No,Double,None,No,Yes,No,1204
+Dhaka,No,22.4,3,No,Suite,City View,No,Yes,No,1582
+Dhaka,Yes,0.112,4.1,Yes,Twin,None,No,Yes,No,5972
+Dhaka,Yes,14,4.6,Yes,Double,None,No,Yes,No,10310
+Dhaka,Yes,22.369,4.5,Yes,Twin,Lake View,Yes,Yes,No,8597
+Dhaka,Yes,22.369,4.5,Yes,Double,Lake View,Yes,Yes,No,11134
+Dhaka,Yes,22.369,4.5,Yes,Triple,None,Yes,Yes,No,13670
+Dhaka,Yes,5.59,4.7,Yes,Double,None,Yes,Yes,No,2575
+Dhaka,Yes,2.09,4.1,Yes,Double,None,Yes,Yes,No,5150
+Dhaka,Yes,2.09,4.1,Yes,Twin,None,Yes,Yes,No,6523
+Gulshan,Yes,2.09,4.1,Yes,Suite,None,Yes,Yes,No,10901
+Gulshan,Yes,1.207,4.2,No,Double,None,No,No,No,14463
+Gulshan,Yes,1.207,4.2,No,Twin,None,No,No,No,11549
+Gulshan,Yes,15,4,Yes,Double,None,Yes,No,Yes,10512
+Gulshan,Yes,15,4,Yes,Triple,None,Yes,No,Yes,17055
+Gulshan,No,1.931,4,Yes,Double,None,Yes,Yes,No,12917
+Dhaka,No,10.94,4.2,Yes,Double,None,No,No,Yes,3500
+Dhaka,No,10.94,4.2,Yes,Triple,None,No,No,Yes,5861
+Dhaka,Yes,10.2,4.5,Yes,Double,None,No,Yes,Yes,10228
+Dhaka,Yes,3.7,4,Yes,Twin,None,Yes,Yes,Yes,6190
+Dhaka,Yes,3.7,4,Yes,Triple,None,Yes,Yes,Yes,6964
+Dhaka,Yes,3.7,4,Yes,Double,None,Yes,Yes,Yes,5158
+Dhaka,Yes,3.7,4,Yes,Twin,None,Yes,Yes,Yes,5437
+Dhaka,Yes,3.7,4,Yes,Suite,None,Yes,Yes,Yes,6190
+Dhaka,Yes,3.7,4,Yes,Single,None,Yes,Yes,Yes,3353
+Dhaka,No,4.18,4.5,Yes,Twin,None,No,Yes,Yes,2493
+Dhaka,No,4.18,4.5,Yes,Suite,None,No,Yes,Yes,3353
+Dhaka,No,4.18,4.5,Yes,Double,None,No,Yes,Yes,3181
+Dhaka,No,4.18,4.5,Yes,Triple,None,No,Yes,Yes,3525
+Gulshan,No,12.2,4,No,Double,None,Yes,No,Yes,17000
+Gulshan,No,12.2,4,No,Single,None,No,No,Yes,8555
+Gulshan,No,11,4,Yes,Double,City View,Yes,No,Yes,30000
+Gulshan,No,11,4,Yes,Suite,City View,Yes,Yes,Yes,50000
+Gulshan,No,12.2,4,No,Twin,None,Yes,No,Yes,19500
+Gulshan,No,11,4,Yes,Double,None,Yes,No,Yes,37896
+Gulshan,No,11,4,Yes,Twin,None,Yes,No,Yes,40800
+Gulshan,No,11,4,Yes,Double,None,Yes,Yes,Yes,37787
+Gulshan,No,11,4,Yes,Double,None,Yes,No,Yes,27000
+Gulshan,No,11,4,Yes,Single,City View,Yes,No,Yes,17500
+Rajshahi,No,1.9,4,No,Double,City View,No,Yes,No,7125
+Rajshahi,No,1.9,4,No,Twin,City View,No,Yes,No,8130
+Rajshahi,No,1.9,4,No,Double,City View,No,Yes,No,8155
+Rajshahi,No,1.9,4,No,Suite,City View,No,Yes,No,14937
+Rajshahi,No,1.9,4,No,Suite,City View,No,Yes,No,20344
+Rajshahi,No,7,4.7,Yes,Double,None,No,No,No,3198
+Rajshahi,No,15.2,4,Yes,Double,None,No,No,Yes,3907
+Rajshahi,Yes,2.73,3.6,No,Double,None,No,Yes,No,3095
+Rajshahi,Yes,2.73,3.6,No,Twin,None,No,Yes,No,3525
+Rajshahi,Yes,2.73,3.6,No,Single,None,No,Yes,No,2579
+Rajshahi,No,8.04,3,No,Single,None,No,No,No,1238
+Rajshahi,Yes,2.84,4.5,Yes,Single,None,Yes,Yes,No,11587
+Rajshahi,Yes,2.84,4.5,Yes,Double,None,Yes,Yes,No,13733
+Rajshahi,No,1.28,4.3,Yes,Double,None,No,No,Yes,8154
+Rajshahi,No,1.28,4.3,Yes,Triple,None,No,No,Yes,9527
+Rangamati,No,2.57,3.6,No,Double,None,No,No,No,1776
+Rangamati,No,3,3.7,No,Single,None,No,No,No,1283
+Rangamati,No,3,3.7,No,Double,None,No,No,No,1776
+Rangamati,No,5.79,4.3,Yes,Double,None,No,No,No,5175
+Rangamati,Yes,3.86,4,No,Single,None,No,No,No,1569
+Rangamati,No,1.44,4,Yes,Double,None,No,No,Yes,3624
+Rangamati,No,5.47,2,No,Double,City View,No,No,No,16512
+Rangamati,No,4.34,4.2,No,Single,None,No,No,No,2000
+Rangamati,No,2.8,4.2,No,Single,None,No,No,No,1000
+Rangamati,No,2.8,4.2,No,Triple,None,No,No,No,3000
+Rangamati,No,2.8,4.2,No,Twin,None,No,No,No,2400
+Rangamati,No,2.8,4.2,No,Double,None,No,No,No,2800
+Rangamati,Yes,35.88,4,Yes,Double,None,Yes,No,Yes,7427
+Rangamati,Yes,0.643,4,Yes,Double,Sea View,Yes,No,Yes,4032
+Rangamati,Yes,0.643,4,Yes,Twin,Sea View,Yes,Yes,Yes,3688
+Rangamati,Yes,1.2,5,Yes,Single,Sea View,Yes,Yes,Yes,1607
+Cox's Bazar,Yes,8,4.5,Yes,Double,None,No,No,Yes,12710
+Cox's Bazar,Yes,0.1,4,Yes,Single,None,Yes,No,Yes,2598
+Cox's Bazar,Yes,28,5,Yes,Double,None,Yes,Yes,Yes,13384
+Cox's Bazar,Yes,28,5,Yes,Double,Sea View,Yes,Yes,Yes,13894
+Cox's Bazar,Yes,6,4,Yes,Quadruple,Sea View,Yes,No,Yes,47870
+Cox's Bazar,Yes,75.6,3,Yes,Double,None,Yes,No,No,5128
+Sreemangal,Yes,0.9,3,No,Single,City View,No,No,No,688
+Sreemangal,Yes,0.9,3,No,Double,City View,No,No,No,1118
+Sreemangal,Yes,0.9,3,No,Double,City View,No,No,No,1548
+Sreemangal,Yes,0.9,3,No,Double,City View,No,No,No,2063
+Sreemangal,Yes,0.9,3,No,Double,None,No,No,No,2407
+Sreemangal,Yes,0.9,3,No,Suite,City View,No,Yes,No,2837
+Sreemangal,Yes,0.9,3,No,Double,City View,No,No,No,2837
+Sreemangal,Yes,0.9,3,No,Suite,City View,No,No,No,3267
+Sreemangal,Yes,0.9,3,No,Double,City View,No,No,No,3525
+Sreemangal,Yes,0.7,2,No,Double,None,No,No,No,812
+Sreemangal,Yes,0.7,2,No,Double,None,No,No,No,1393
+Sreemangal,Yes,0.7,2,No,Twin,Hill View,No,No,No,1977
+Sreemangal,Yes,0.7,2,No,Twin,Hill View,No,Yes,No,2708
+Sreemangal,Yes,2.4,3,Yes,Double,Hill View,No,Yes,No,2424
+Sreemangal,Yes,2.4,3,No,Quadruple,Hill View,No,Yes,No,3513
+Sreemangal,Yes,2.4,3,Yes,Suite,None,No,Yes,No,4200
+Sreemangal,Yes,3.7,3,No,Single,City View,No,No,No,1163
+Sreemangal,Yes,3.7,3,No,Single,City View,No,No,No,1669
+Sreemangal,Yes,3.7,3,No,Double,City View,No,No,No,1948
+Sreemangal,Yes,3.7,3,No,Twin,City View,No,No,No,2681
+Sreemangal,Yes,3.8,2,No,Double,None,No,No,No,1513
+Sreemangal,Yes,4.6,4,No,Double,None,No,No,No,3525
+Sreemangal,Yes,4.6,4,No,Twin,Hill View,No,No,No,4643
+Sreemangal,Yes,0.6,3,No,Double,None,No,No,No,2235
+Sreemangal,Yes,0.6,3,No,Double,None,No,No,No,2493
+Sreemangal,Yes,0.6,3,No,Twin,None,No,No,No,2579
+Sreemangal,Yes,0.6,3,No,Double,Hill View,No,No,No,4987
+Sreemangal,Yes,0.6,3,No,Triple,None,No,No,No,3009
+Sylhet,No,20.3,3,No,Single,None,No,No,No,2150
+Sylhet,No,20.3,3,No,Single,None,No,No,No,2408
+Sylhet,No,20.3,3,No,Double,City View,No,No,No,2580
+Sylhet,Yes,20.3,3,No,Twin,None,No,No,No,3010
+Sylhet,No,20.3,3,No,Single,City View,No,No,No,4730
+Sylhet,No,20.3,3,No,Suite,None,No,No,No,4987
+Sylhet,No,20.3,3,No,Suite,Lake View,No,No,No,7308
+Sylhet,Yes,20.3,3,No,Suite,Lake View,No,No,No,7738
+Sylhet,No,0.5,2,No,Suite,None,No,No,No,4471
+Sylhet,Yes,1.931,3.5,Yes,Suite,Hill View,Yes,Yes,Yes,4877
+Sylhet,No,7.563,4.5,Yes,Suite,None,Yes,Yes,Yes,2485
+Sylhet,No,13.679,4,Yes,Suite,None,No,No,Yes,4299
+Sylhet,Yes,0.95,5,Yes,Double,None,Yes,No,Yes,3342
+Sylhet,Yes,0.32,4,No,Double,Hill View,Yes,No,Yes,2534
+Sylhet,Yes,0.53,4,Yes,Single,Hill View,Yes,No,Yes,4405
+Sylhet,No,1.2,3.5,Yes,Double,None,Yes,No,No,3193
+Sylhet,Yes,0.989,3.5,No,Double,Hill View,No,Yes,No,3452
+Sylhet,Yes,9,4,Yes,Suite,None,No,No,Yes,12881
+Sylhet,Yes,1.6,3.5,Yes,Suite,None,Yes,No,Yes,8202
+Sylhet,Yes,1.6,3.5,Yes,Triple,None,Yes,No,Yes,15192
+Sylhet,Yes,0.53,4,Yes,Double,Hill View,Yes,No,Yes,15192
+Sylhet,Yes,0.95,5,Yes,Single,None,Yes,No,Yes,2660
+Sylhet,Yes,0.95,5,Yes,Quadruple,None,Yes,No,Yes,18368
+Sylhet,No,3.3,4.1,No,Double,None,No,No,No,2099
+Sylhet,No,3.3,4.1,No,Twin,None,No,No,No,2199
+Sylhet,No,8.69,4.3,Yes,Double,None,No,No,Yes,10496
+Sylhet,No,8.69,4.3,Yes,Twin,None,No,No,Yes,11398
+Sylhet,Yes,0.826,3.7,No,Twin,None,No,No,No,2534
+Sylhet,Yes,0.826,3.7,No,Double,None,No,No,No,3039
+Sylhet,Yes,7.2,3.8,No,Single,Hill View,No,No,No,1201
+Sylhet,Yes,7.2,3.8,No,Double,Hill View,No,No,No,2489
+Sylhet,Yes,8.04,3,No,Single,City View,No,Yes,No,3519
+Sylhet,Yes,8.04,3,No,Double,City View,No,Yes,No,4463
+Sylhet,No,34.76,2.5,No,Double,None,No,No,No,4126
+Sylhet,Yes,28,4.5,Yes,Double,Hill View,No,Yes,Yes,22339
+Sylhet,Yes,28,4.5,Yes,Quadruple,Hill View,No,Yes,Yes,30159
+Sylhet,No,40.55,4,Yes,Double,None,Yes,No,No,7427
+Sylhet,No,41,5,Yes,Triple,Hill View,Yes,Yes,Yes,5250
+Sylhet,Yes,56.48,4,Yes,Single,None,Yes,Yes,Yes,6519
+Sylhet,Yes,56.48,4,Yes,Double,None,Yes,Yes,Yes,8781
+Sylhet,Yes,56.48,4,Yes,Twin,None,Yes,Yes,Yes,8319
